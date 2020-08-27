@@ -1,7 +1,6 @@
 ###### tags: `algorithm`
 
-
-# CATCH STUDY
+# Simple is the best
 
 ## Who am I?
 
