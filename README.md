@@ -1,8 +1,5 @@
----
-title: CATCH STUDY
-tags: catch, algorithm
-description: catch study algorithm repo
----
+###### tags: `algorithm`
+
 
 # CATCH STUDY
 
