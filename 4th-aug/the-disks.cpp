@@ -33,6 +33,8 @@ int main () {
 
         break;
       }
+
+      if (j == height-1) height = j;
     }
   }
 
