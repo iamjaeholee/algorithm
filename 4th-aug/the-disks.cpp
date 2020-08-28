@@ -1,35 +1,33 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main () {
   int height, n;
   // input values from stdin
-  cin >> height >> n;
+  scanf("%d%d", &height, &n);
 
   int cylinders[height];
 
   // check the input
   if(height < n) {
-    cout << 0;
+    printf("%d", 0);
     return 0;
   }
   
   for (auto i = 0; i < height; i++) {
-    cin >> cylinders[i];
+    scanf("%d", &cylinders[i]);
   }
 
   // core
   for (auto i = 0; i < n; i++) {
     int diskWeight;
-    cin >> diskWeight;
+    scanf("%d", &diskWeight);
 
     for (auto j = 0; j < height; j++) {
       if (diskWeight > cylinders[j]) {
         height = j;
 
         if (height == 0 && i != n-1) {
-          cout << height;
+          printf("%d", height);
           return 0;
         }
 
@@ -38,5 +36,5 @@ int main () {
     }
   }
 
-  cout << height;
+  printf("%d", height);
 }
