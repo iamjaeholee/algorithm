@@ -125,4 +125,5 @@ int main() {
   printf("%d", dice.score);
 
   return 0;
+
 }
