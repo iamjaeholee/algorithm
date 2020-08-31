@@ -50,4 +50,5 @@ int main() {
   printf("%d", app.current);
 
   return 0;
+
 }
