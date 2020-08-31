@@ -19,17 +19,19 @@ int main() {
   }
 
   do {
+    int bannid_index = 0;
 
     for(auto i=0; i<user_id.size(); i++) {
       bool is_failed = false;
       if(check[i] == 1) continue;
+      if(i!=0) bannid_index += 1;
 
       // break when no size match
-      if(banned_id[i].size() != user_id[i].size()) break;
+      if(banned_id[bannid_index].size() != user_id[i].size()) break;
 
-      for(auto j=0; j<banned_id[i].size(); j++) {
-        if(banned_id[i][j] == '*') continue;
-        if(banned_id[i][j] != user_id[i][j]) {
+      for(auto j=0; j<banned_id[bannid_index].size(); j++) {
+        if(banned_id[bannid_index][j] == '*') continue;
+        if(banned_id[bannid_index][j] != user_id[i][j]) {
           is_failed = true;
           break;
         }
