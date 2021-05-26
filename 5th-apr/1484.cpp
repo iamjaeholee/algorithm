@@ -5,13 +5,13 @@ int main(){
   int G;
   std::cin >> G;
 
-  int x=2;
+  int x=1;
   int check=0;
 
   while(true){
     int xPow = x*x;
 
-    if(xPow <= G) {
+    if(xPow < G) {
       x++;
       continue;
     } else if(xPow <= ((x-1)*(x-1) + G)) {

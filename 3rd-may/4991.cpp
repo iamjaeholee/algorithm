@@ -50,17 +50,15 @@ int bfs(std::vector<std::string>& map, const int&w, const int& h, const std::pai
 }
 
 int main(){
-  while(true){
-    int w, h;
-    std::cin >> w >> h;
-    std::cin.ignore();
+  int w, h;
 
+  while(std::cin >> w >> h){
     // 종료 조건
     if(w == 0 && h == 0) break; 
 
     // 맵 만들기
     std::vector<std::string> map(h);
-    for(int i=0; i<h; i++) std::getline(std::cin, map[i]); 
+    for(int i=0; i<h; i++) std::getline(std::cin >> std::ws, map[i]); 
 
     // 더러운 칸 찾기
     std::pair<int, int> start;
@@ -88,7 +86,7 @@ int main(){
     } while(std::next_permutation(dirtySpaces.begin(), dirtySpaces.end(), compairFunc));
 
     // 출력
-    answer == INT_MAX ? std::cout << -1 << std::endl : std::cout << answer << std::endl;
+    answer == INT_MAX ? std::cout << -1 << "\n" : std::cout << answer << "\n";
   }
   return 0;
 }
