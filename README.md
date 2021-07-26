@@ -1,1 +1,1 @@
-## Algorithm just for fun.
+## Algorithms just for having a fun.
