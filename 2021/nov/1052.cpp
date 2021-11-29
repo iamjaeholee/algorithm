@@ -1,6 +1,4 @@
 #include <iostream>
-#include <math.h>
-#include <vector>
 
 int findCount(int n)
 {
@@ -20,7 +18,10 @@ bool checkK(int count, int k)
     {
         if (k == count)
             return true;
-        k >>= 1;
+        if (k & 1)
+            k >>= 1;
+        else
+            break;
     }
 
     return false;
