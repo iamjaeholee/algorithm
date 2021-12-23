@@ -2,22 +2,24 @@
 #include <set>
 #include <vector>
 
-typedef std::vector<std::vector<int>> vii;
+typedef std::vector<std::vector<int> > vii;
 
-bool validator(const int &node, const int &n)
+bool validator(const int node, const int &n)
 {
     if (node > 0 && node <= n)
         return true;
     return false;
 }
-int dp(const int &node, std::set<int> &footprint, const int &n, vii &memo)
+int dp(const int node, std::set<int> &footprint, const int &n, vii &memo)
 {
     // mark node
     footprint.insert(node);
 
     // when complete traveling
-    if (footprint.size() == n)
+    if (footprint.size() == n) {
+        footprint.erase(node);
         return 1;
+    }
 
     int result = 0;
 
@@ -40,8 +42,8 @@ int dp(const int &node, std::set<int> &footprint, const int &n, vii &memo)
         }
     }
 
-    footprint.erase(node);
 
+    footprint.erase(node);
     return result;
 }
 
@@ -51,7 +53,7 @@ int main()
     std::cin >> n;
 
     std::set<int> footprint;
-    vii memo(n + 1, std::vector<int>(3, -1));
+    vii memo(n + 1, std::vector<int>(4, -1));
     std::cout << dp(1, footprint, n, memo);
     return 0;
 }
