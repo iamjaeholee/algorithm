@@ -53,7 +53,7 @@ int main()
     std::cin >> n;
 
     std::set<int> footprint;
-    vii memo(n + 1, std::vector<int>(4, -1));
+    vii memo(n + 1, std::vector<int>(n + 1, -1));
     std::cout << dp(1, footprint, n, memo);
     return 0;
 }
