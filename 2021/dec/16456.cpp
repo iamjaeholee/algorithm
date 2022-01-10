@@ -10,6 +10,7 @@ bool validator(const int node, const int &n)
         return true;
     return false;
 }
+
 int dp(const int node, std::set<int> &footprint, const int &n, vii &memo)
 {
     // mark node
@@ -22,12 +23,14 @@ int dp(const int node, std::set<int> &footprint, const int &n, vii &memo)
     }
 
     int result = 0;
-
+    // moving
     for (int i = -1; i < 3; i++)
     {
+        // escape standing
         if (i == 0)
             continue;
 
+        // if validate moving
         if (validator(node + i, n) && footprint.count(node + i) == 0)
         {
             int m = memo[node][node + i];
@@ -51,9 +54,8 @@ int main()
 {
     int n;
     std::cin >> n;
-
     std::set<int> footprint;
     vii memo(n + 1, std::vector<int>(4, -1));
-    std::cout << dp(1, footprint, n, memo);
+    std::cout << dp(1, footprint, n, memo) % 1000000009;
     return 0;
 }
