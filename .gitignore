@@ -7,3 +7,6 @@
 !*/
 !.gitignore
 !README.md
+
+# not .rust
+!*.rs
