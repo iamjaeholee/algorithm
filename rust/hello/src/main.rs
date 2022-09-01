@@ -25,7 +25,6 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
         if el + jel == target {
           result.push(i as i32);
           result.push((i+j+1) as i32);
-
         }
       }
     }
